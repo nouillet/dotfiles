@@ -64,14 +64,14 @@ autocmd BufEnter * silent! lcd %:p:h
 
 call plug#begin('$HOME/.vim/plugged')
 
-source ~/.config/vim/plugins/airline.vim
-source ~/.config/vim/plugins/ayu-vim.vim
-source ~/.config/vim/plugins/fzf.vim
-source ~/.config/vim/plugins/polyglot.vim
-source ~/.config/vim/plugins/vim-fugitive.vim
-source ~/.config/vim/plugins/vim-gitbranch.vim
-source ~/.config/vim/plugins/vim-gitgutter.vim
-source ~/.config/vim/plugins/vim-jijna2-syntax.vim
+source ~/.config/nvim/plugins/airline.vim
+source ~/.config/nvim/plugins/ayu-vim.vim
+source ~/.config/nvim/plugins/fzf.vim
+source ~/.config/nvim/plugins/polyglot.vim
+source ~/.config/nvim/plugins/vim-fugitive.vim
+source ~/.config/nvim/plugins/vim-gitbranch.vim
+source ~/.config/nvim/plugins/vim-gitgutter.vim
+source ~/.config/nvim/plugins/vim-jijna2-syntax.vim
 
 call plug#end()
 
