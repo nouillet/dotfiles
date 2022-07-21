@@ -182,5 +182,10 @@ create_view() {
     ssh -p 45679 $1 create-view < $2
 }
 
+if type rg &> /dev/null; then
+  export FZF_DEFAULT_COMMAND='rg --files'
+  export FZF_DEFAULT_OPTS='-m --height 50% --border'
+fi
+
 source ~/.aliases
 # End Custom Stuff
