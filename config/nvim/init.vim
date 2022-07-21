@@ -80,7 +80,6 @@ call plug#begin('$HOME/.vim/plugged')
 source ~/.config/nvim/plugins/airline.vim
 source ~/.config/nvim/plugins/ayu-vim.vim
 source ~/.config/nvim/plugins/fzf.vim
-source ~/.config/nvim/plugins/polyglot.vim
 source ~/.config/nvim/plugins/vim-fugitive.vim
 source ~/.config/nvim/plugins/vim-gitbranch.vim
 source ~/.config/nvim/plugins/vim-gitgutter.vim
