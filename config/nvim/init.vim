@@ -52,6 +52,8 @@ vmap <S-Tab> <gv
 inoremap <S-Tab> <C-D>
 nnoremap H gT
 nnoremap L gt
+nnoremap <silent> <C-f> :Files<CR>
+nnoremap <silent> <Leader>f :Rg<CR>
 
 " ????
 autocmd BufEnter * silent! lcd %:p:h
