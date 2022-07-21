@@ -13,6 +13,7 @@ set list
 set listchars=tab:>-
 set nocompatible
 set number
+set relativenumber
 set scrolloff=8
 set sidescrolloff=8
 set signcolumn=yes
@@ -84,7 +85,7 @@ source ~/.config/nvim/plugins/vim-fugitive.vim
 source ~/.config/nvim/plugins/vim-gitbranch.vim
 source ~/.config/nvim/plugins/vim-gitgutter.vim
 source ~/.config/nvim/plugins/vim-jijna2-syntax.vim
-
+source ~/.config/nvim/plugins/vimbegood.vim
 call plug#end()
 
 " TODO Why can't it be in the source config?
