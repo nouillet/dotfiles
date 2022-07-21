@@ -1,4 +1,5 @@
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 
 " This is the default extra key bindings
 let g:fzf_action = {
