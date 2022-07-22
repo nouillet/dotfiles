@@ -35,6 +35,7 @@ syntax on
 
 autocmd BufNewFile,BufRead Jenkinsfile set filetype=groovy
 autocmd BufNewFile,BufRead *.template set filetype=jinja
+autocmd BufNewFile,BufRead *.view set filetype=jinja
 autocmd BufNewFile,BufRead *.profile set filetype=yaml
 au BufRead,BufNewFile */Ansible/*.yml set filetype=yaml.ansible
 au BufRead,BufNewFile */Ansible/hosts set filetype=ansible_hosts
@@ -56,7 +57,6 @@ nnoremap L gt
 nnoremap <silent> <C-f> :Files<CR>
 nnoremap <silent> <Leader>f :Rg<CR>
 nnoremap <silent> <Leader>b :Buffers<CR>
-nnoremap <silent> <C-f> :Files<CR>
 nnoremap <silent> <Leader>f :Rg<CR>
 nnoremap <silent> <Leader>/ :BLines<CR>
 nnoremap <silent> <Leader>' :Marks<CR>
