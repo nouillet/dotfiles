@@ -78,7 +78,7 @@ autocmd BufEnter * silent! lcd %:p:h
 call plug#begin('$HOME/.vim/plugged')
 
 source ~/.config/nvim/plugins/airline.vim
-source ~/.config/nvim/plugins/ayu-vim.vim
+source ~/.config/nvim/plugins/gruvbox.vim
 source ~/.config/nvim/plugins/fzf.vim
 source ~/.config/nvim/plugins/vim-fugitive.vim
 source ~/.config/nvim/plugins/vim-gitbranch.vim
@@ -87,7 +87,6 @@ source ~/.config/nvim/plugins/vim-jijna2-syntax.vim
 source ~/.config/nvim/plugins/vimbegood.vim
 call plug#end()
 
-" TODO Why can't it be in the source config?
-colorscheme ayu
-highlight LineNr guifg=white
 
+colorscheme gruvbox
+highlight LineNr guifg=white
