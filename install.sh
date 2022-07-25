@@ -16,9 +16,9 @@ mkdir $backup_folder
 
 link_configuration_files() {
     
-    for file in `ls -p | grep -v / | grep -v install.sh | grep -v tags` ; do
+    for file in `ls -p | grep -v / | grep -v install.sh` ; do
         # TODO
-        #   - If target exists and is a file, back them up. 
+        #   - If target exists and is a file, back them up. - DONE
         #   - If target exists validate if it comes from here. - DONE
         #   - If target exists and not from this repo, remove link and create a new one - DONE
         
@@ -26,16 +26,19 @@ link_configuration_files() {
             link=$(readlink -f "$HOME/.$file")
             if [ $link = "$cwd/$file" ] ; then
                 echo "Symlink $HOME/.$file already exists"
+                continue
             else
+                echo "Removing existing symlink $HOME/.$file"
                 rm "$HOME/.$file"
             fi
         elif [ -f "$HOME/.$file" ] ; then
             echo "Backing up file "$HOME/.$file" in "$backup_folder""
             mv "$HOME/.$file" "$backup_folder/"
-        else
-            echo "Creating $file symlink into $HOME/.$file"
-            ln -s $cwd/$file $HOME/.$file
         fi
+
+        echo "Creating $file symlink into $HOME/.$file"
+        ln -s $cwd/$file $HOME/.$file
+        
     done
     
     echo "Symlinks done!"
