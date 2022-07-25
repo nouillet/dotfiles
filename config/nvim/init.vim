@@ -46,7 +46,7 @@ au BufRead,BufNewFile */Ansible/hosts set filetype=ansible_hosts
 "
 "-------------------------------------------------------------------------------
 
-let mapleader = "\<space>"
+let mapleader = " "
 nmap <leader>Q :bufdo bdelete<cr>
 map gf :edit <cfile><cr>
 vmap <Tab> >gv
@@ -57,7 +57,6 @@ nnoremap L gt
 nnoremap <silent> <C-f> :Files<CR>
 nnoremap <silent> <Leader>f :Rg<CR>
 nnoremap <silent> <Leader>b :Buffers<CR>
-nnoremap <silent> <Leader>f :Rg<CR>
 nnoremap <silent> <Leader>/ :BLines<CR>
 nnoremap <silent> <Leader>' :Marks<CR>
 nnoremap <silent> <Leader>g :Commits<CR>
@@ -85,6 +84,7 @@ source ~/.config/nvim/plugins/vim-gitbranch.vim
 source ~/.config/nvim/plugins/vim-gitgutter.vim
 source ~/.config/nvim/plugins/vim-jijna2-syntax.vim
 source ~/.config/nvim/plugins/vimbegood.vim
+
 call plug#end()
 
 
