@@ -83,6 +83,8 @@ source ~/.config/nvim/plugins/airline.vim
 source ~/.config/nvim/plugins/commentary.vim
 source ~/.config/nvim/plugins/gruvbox.vim
 source ~/.config/nvim/plugins/fzf.vim
+source ~/.config/nvim/plugins/nvim-lint.vim
+source ~/.config/nvim/plugins/vim-context.vim
 source ~/.config/nvim/plugins/vim-fugitive.vim
 source ~/.config/nvim/plugins/vim-gitbranch.vim
 source ~/.config/nvim/plugins/vim-gitgutter.vim
@@ -91,6 +93,11 @@ source ~/.config/nvim/plugins/vimbegood.vim
 
 call plug#end()
 
+"-------------------------------------------------------------------------------
+"
+" Stuff that must be called at the end
+"
+"-------------------------------------------------------------------------------
 
 colorscheme gruvbox
 highlight LineNr guifg=white

@@ -152,7 +152,7 @@ function cd() {
 }
 
 export PYENV_ROOT=$HOME/.pyenv
-PATH=$HOME/local/bin:/Python/python310/bin:/Python/python38/bin:/Python/python37/bin:/Python/python27/bin:$PYENV_ROOT/bin:$HOME/Projects/CI/ludiasdk3-deployment/Scripts/ci/jenkins/cli:/opt/java/jre1.8.0_333/bin:$HOME/GitHub/.dotfiles/bin/.local/bin:$PATH
+PATH=$HOME/local/bin:/Python/python310/bin:/Python/python38/bin:/Python/python37/bin:/Python/python27/bin:$PYENV_ROOT/bin:$HOME/Projects/CI/ludiasdk3-deployment/Scripts/ci/jenkins/cli:$HOME/.local/jdks/amazon-corretto-11/bin:$HOME/.local/scripts:/opt/nodejs/current/bin:$PATH
 
 source ~/.aliases
 if [ ! -S ~/.ssh/ssh_auth_sock ]; then

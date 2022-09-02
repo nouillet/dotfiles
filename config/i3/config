@@ -206,4 +206,4 @@ bindsym Control+$mod+l exec "xset dpms force off && i3lock -c 000000"
 exec --no-startup-id "feh --bg-scale ~/Pictures/batman.jpg"
 
 # Monitors
-exec xrandr --output DP-1 --primary --output HDMI-0 --rotate right --output eDP-1-1 --off
+exec xrandr --output DP-1 --primary --output eDP-1-1 --off
