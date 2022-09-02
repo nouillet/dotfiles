@@ -83,7 +83,9 @@ source ~/.config/nvim/plugins/airline.vim
 source ~/.config/nvim/plugins/commentary.vim
 source ~/.config/nvim/plugins/gruvbox.vim
 source ~/.config/nvim/plugins/fzf.vim
+source ~/.config/nvim/plugins/lsp.vim
 source ~/.config/nvim/plugins/nvim-lint.vim
+source ~/.config/nvim/plugins/nvim-jdtls.vim
 source ~/.config/nvim/plugins/vim-context.vim
 source ~/.config/nvim/plugins/vim-fugitive.vim
 source ~/.config/nvim/plugins/vim-gitbranch.vim
@@ -92,6 +94,8 @@ source ~/.config/nvim/plugins/vim-jijna2-syntax.vim
 source ~/.config/nvim/plugins/vimbegood.vim
 
 call plug#end()
+
+lua require('nouillet')
 
 "-------------------------------------------------------------------------------
 "
