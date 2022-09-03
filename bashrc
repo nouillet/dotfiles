@@ -175,8 +175,17 @@ __complete_ssh_host() {
     return 0
 }
 
+__complete_tmux_sessions() {
+    local SESSIONS_LIST=`tmux list-sessions | awk '{print $1}' | sed -s 's/:$//'`
+
+    local PARTIAL_WORD="${COMP_WORDS[COMP_CWORD]}";
+    COMPREPLY=( $(compgen -W "$SESSIONS_LIST" -- "$PARTIAL_WORD") )
+}
+
+
 complete -F __complete_ssh_host ssh
 complete -f -F __complete_ssh_host scp
+complete -F __complete_tmux_sessions tma
 
 create_view() {
     ssh -p 45679 $1 create-view < $2
