@@ -1,0 +1,13 @@
+{
+    "java.configuration.runtimes": [
+        {
+            "name": "JavaSE-11",
+            "path": "/home/kpelletier/.local/jdks/amazon-corretto-11/bin/java",
+            "default": true
+        },
+        {
+            "name": "JavaSE-17",
+            "path": "/home/kpelletier/.local/jdks/amazon-corretto-17/bin/java"
+        }
+    ]
+}
