@@ -56,7 +56,7 @@ nnoremap H gT
 nnoremap L gt
 nnoremap <silent> <C-f> :Files<CR>
 nnoremap <silent> <Leader>w :bw<CR>
-nnoremap <silent> <Leader>F :Files ~<CR>
+nnoremap <silent> <Leader>F :GFiles<CR>
 nnoremap <silent> <Leader>f :Ag<CR>
 nnoremap <silent> <Leader>b :Buffers<CR>
 nnoremap <silent> <Leader>/ :BLines<CR>
