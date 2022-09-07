@@ -48,9 +48,8 @@ au BufRead,BufNewFile */Ansible/hosts set filetype=ansible_hosts
 
 let mapleader = " "
 nmap <leader>Q :bufdo bdelete<cr>
+nmap <leader>b <c-^><cr>
 map gf :edit <cfile><cr>
-vmap <Tab> >gv
-vmap <S-Tab> <gv
 inoremap <S-Tab> <C-D>
 nnoremap H gT
 nnoremap L gt
@@ -58,7 +57,7 @@ nnoremap <silent> <C-f> :Files<CR>
 nnoremap <silent> <Leader>w :bw<CR>
 nnoremap <silent> <Leader>F :GFiles<CR>
 nnoremap <silent> <Leader>f :Ag<CR>
-nnoremap <silent> <Leader>b :Buffers<CR>
+nnoremap <silent> <Leader>B :Buffers<CR>
 nnoremap <silent> <Leader>/ :BLines<CR>
 nnoremap <silent> <Leader>' :Marks<CR>
 nnoremap <silent> <Leader>g :Commits<CR>
@@ -85,6 +84,7 @@ autocmd BufEnter * silent! lcd %:p:h
 call plug#begin('$HOME/.vim/plugged')
 
 source ~/.config/nvim/plugins/airline.vim
+source ~/.config/nvim/plugins/ansible.vim
 source ~/.config/nvim/plugins/coc.vim
 source ~/.config/nvim/plugins/commentary.vim
 source ~/.config/nvim/plugins/gruvbox.vim
