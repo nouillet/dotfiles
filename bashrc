@@ -118,9 +118,16 @@ if ! shopt -oq posix; then
   fi
 fi
 
+####################################################################
+#                                                                  #
+# Custom Functions                                                 #
+#                                                                  #
+####################################################################
 
-# Beginning Custom stuff
-source ~/.config/git/git-prompt.sh
+if [ ! -S ~/.ssh/ssh_auth_sock ]; then
+  eval `ssh-agent`
+  ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
+fi
 
 function cd() {
   builtin cd "$@"
@@ -150,19 +157,6 @@ function cd() {
       fi
   fi
 }
-
-export PYENV_ROOT=$HOME/.pyenv
-PATH=$HOME/local/bin:/Python/python310/bin:/Python/python38/bin:/Python/python37/bin:/Python/python27/bin:$PYENV_ROOT/bin:$HOME/Projects/CI/ludiasdk3-deployment/Scripts/ci/jenkins/cli:$HOME/.local/jdks/amazon-corretto-11/bin:$HOME/.local/scripts:/opt/nodejs/current/bin:$PATH
-
-source ~/.aliases
-if [ ! -S ~/.ssh/ssh_auth_sock ]; then
-  eval `ssh-agent`
-  ln -sf "$SSH_AUTH_SOCK" ~/.ssh/ssh_auth_sock
-fi
-export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
-
-alias ident="ssh-add ~/.ssh/id_rsa"
-alias hident="rm -f ~/.ssh/ssh_auth_sock"
 
 __complete_ssh_host() {
     local CONFIG_FILE=~/.ssh/config
@@ -196,12 +190,38 @@ if type rg &> /dev/null; then
   export FZF_DEFAULT_OPTS='-m --height 50% --border'
 fi
 
+
+####################################################################
+#                                                                  #
+# Exports                                                          #
+#                                                                  #
+####################################################################
+
+export SVN_EDITOR=nvim
+export KUBE_EDITOR=nvim
+export PYENV_ROOT=$HOME/.pyenv
+export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
+
+
+####################################################################
+#                                                                  #
+# Sources                                                          #
+#                                                                  #
+####################################################################
+
+source ~/.config/git/git-prompt.sh
 source ~/.aliases
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
+PATH=$HOME/local/bin:/Python/python310/bin:/Python/python38/bin:/Python/python37/bin:/Python/python27/bin:$PYENV_ROOT/bin:$HOME/Projects/CI/ludiasdk3-deployment/Scripts/ci/jenkins/cli:$HOME/.local/jdks/amazon-corretto-11/bin:$HOME/.local/scripts:/opt/nodejs/current/bin:$PATH
+
+
+####################################################################
+#                                                                  #
+# Macros                                                           #
+#                                                                  #
+####################################################################
 
 bind -x '"\C-f": tmux-sessionizer'
-
-# End Custom Stuff
 
