@@ -220,3 +220,6 @@ bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection c
 
 ## Sound Settings
 bindsym $mod+p exec --no-startup-id pavucontrol
+
+# Compton
+exec --no-startup-id compton
