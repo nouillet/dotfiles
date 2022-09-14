@@ -60,8 +60,8 @@ nnoremap <silent> <Leader>ff <cmd>Telescope find_files<CR>
 nnoremap <silent> <Leader>fg <cmd>Telescope live_grep<cr>
 nnoremap <silent> <Leader>F <cmd>Telescope git_files<CR>
 nnoremap <silent> <Leader>fb <cmd>Telescope buffers<cr>
-nnoremap <silent> <Leader>g <cmd>Telescope git_commits<cr>
-nnoremap <silent> <Leader>G :Git blame<CR>
+nnoremap <silent> <Leader>G <cmd>Telescope git_commits<cr>
+" nnoremap <silent> <Leader>G :Git blame<CR>
 " nnoremap <silent> <Leader>B :Buffers<CR>
 " nnoremap <silent> <Leader>/ :BLines<CR>
 " nnoremap <silent> <Leader>' :Marks<CR>
