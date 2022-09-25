@@ -9,5 +9,9 @@
             "name": "JavaSE-17",
             "path": "/home/kpelletier/.local/jdks/amazon-corretto-17/bin/java"
         }
-    ]
+    ],
+    "codeLens.enable" : true,
+    "java.referencesCodeLens.enabled": true,
+    "java.completion.enabled": true
+
 }
