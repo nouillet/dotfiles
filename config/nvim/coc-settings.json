@@ -1,17 +1,30 @@
 {
-    "java.configuration.runtimes": [
-        {
-            "name": "JavaSE-11",
-            "path": "/home/kpelletier/.local/jdks/amazon-corretto-11/bin/java",
-            "default": true
+    "languageserver": {
+        "puppet":{
+            "command": "ruby",
+            "args": ["/home/kpelletier/GitHub/puppet-editor-services/puppet-languageserver","--stdio","--puppet-settings=--moduledir,/home/kpelletier/Projects/Infra/puppet/modules"],
+            "cwd": "/home/kpelletier/GitHub/puppet-editor-services",
+            "filetypes": ["puppet"],
+            "rootPatterns": [".git/", "metadata.json"]
         },
-        {
-            "name": "JavaSE-17",
-            "path": "/home/kpelletier/.local/jdks/amazon-corretto-17/bin/java"
+        "bash": {
+            "command": "bash-language-server",
+            "args": ["start"],
+            "filetypes": ["sh"]
+        },
+        "golang": {
+            "command": "gopls",
+            "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+            "filetypes": ["go"]
+        },
+        "dockerfile": {
+            "command": "docker-langserver",
+            "filetypes": ["dockerfile"],
+            "args": ["--stdio"]
+        },
+        "python":{
+            "command": "python",
+            "filetypes": ["python"]
         }
-    ],
-    "codeLens.enable" : true,
-    "java.referencesCodeLens.enabled": true,
-    "java.completion.enabled": true
-
+    }
 }
