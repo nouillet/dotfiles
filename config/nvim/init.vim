@@ -51,15 +51,15 @@ nmap <leader>Q :bufdo bdelete<cr>
 nmap <leader>b <c-^><cr>
 map gf :edit <cfile><cr>
 inoremap <S-Tab> <C-D>
-nnoremap H gT
-nnoremap L gt
 nnoremap <silent> <Leader>w :bd<CR>
 nnoremap <silent> <Leader>W :bd!<CR>
-nnoremap <silent> <Leader>ff <cmd>Telescope find_files<CR>
+nnoremap <silent> <Leader>b <cmd>Telescope buffers<cr>
 nnoremap <silent> <Leader>fg <cmd>Telescope live_grep<cr>
-nnoremap <silent> <Leader>F <cmd>Telescope git_files<CR>
-nnoremap <silent> <Leader>fb <cmd>Telescope buffers<cr>
-nnoremap <silent> <Leader>G <cmd>Telescope git_commits<cr>
+nnoremap <silent> <Leader>gc <cmd>Telescope git_commits<cr>
+nnoremap <silent> <Leader>gf <cmd>Telescope git_files<CR>
+nnoremap <silent> <Leader>gb <cmd>Git blame<CR>
+nnoremap <C-f> <cmd>lua require('telescope.builtin').find_files()<cr>
+nnoremap <leader>fr <cmd>lua require('telescope.builtin').lsp_references()<cr>
 
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
@@ -91,6 +91,7 @@ source ~/.config/nvim/plugins/vim-context.vim
 source ~/.config/nvim/plugins/vim-fugitive.vim
 source ~/.config/nvim/plugins/vim-gitbranch.vim
 source ~/.config/nvim/plugins/vim-gitgutter.vim
+source ~/.config/nvim/plugins/vim-puppet.vim
 source ~/.config/nvim/plugins/vim-jijna2-syntax.vim
 source ~/.config/nvim/plugins/vimbegood.vim
 
