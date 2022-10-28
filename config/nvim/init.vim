@@ -17,10 +17,10 @@ set relativenumber
 set scrolloff=8
 set sidescrolloff=8
 set signcolumn=yes
-set shiftwidth=4
+set shiftwidth=2
 set showmatch
 set smarttab
-set tabstop=4
+set tabstop=2
 set termguicolors
 set updatetime=100
 set wildmenu
@@ -37,6 +37,7 @@ autocmd BufNewFile,BufRead Jenkinsfile set filetype=groovy
 autocmd BufNewFile,BufRead *.template set filetype=jinja
 autocmd BufNewFile,BufRead *.view set filetype=jinja
 autocmd BufNewFile,BufRead *.profile set filetype=yaml
+autocmd BufNewFile,BufRead *.pkr.hcl set filetype=terraform
 au BufRead,BufNewFile */Ansible/*.yml set filetype=yaml.ansible
 au BufRead,BufNewFile */Ansible/hosts set filetype=ansible_hosts
 
@@ -65,7 +66,7 @@ nnoremap <leader>fr <cmd>lua require('telescope.builtin').lsp_references()<cr>
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
 nmap <silent> gi <Plug>(coc-implementation)
-nmap <silent> gr <Plug>(coc-references)
+" nmap <silent> gr <Plug>(coc-references)
 " ????
 autocmd BufEnter * silent! lcd %:p:h
 
@@ -83,22 +84,32 @@ source ~/.config/nvim/plugins/coc.vim
 source ~/.config/nvim/plugins/commentary.vim
 source ~/.config/nvim/plugins/gruvbox.vim
 " source ~/.config/nvim/plugins/fzf.vim
-source ~/.config/nvim/plugins/lsp.vim
-source ~/.config/nvim/plugins/nvim-lint.vim
-source ~/.config/nvim/plugins/nvim-jdtls.vim
+" source ~/.config/nvim/plugins/lsp.vim
+" source ~/.config/nvim/plugins/nvim-lint.vim
+" source ~/.config/nvim/plugins/nvim-jdtls.vim
+source ~/.config/nvim/plugins/markdown-preview.vim
 source ~/.config/nvim/plugins/nvim-telescope.vim
 source ~/.config/nvim/plugins/vim-context.vim
 source ~/.config/nvim/plugins/vim-fugitive.vim
 source ~/.config/nvim/plugins/vim-gitbranch.vim
 source ~/.config/nvim/plugins/vim-gitgutter.vim
 source ~/.config/nvim/plugins/vim-puppet.vim
-source ~/.config/nvim/plugins/vim-jijna2-syntax.vim
+source ~/.config/nvim/plugins/vim-jinja2-syntax.vim
+source ~/.config/nvim/plugins/vim-terraform.vim
 source ~/.config/nvim/plugins/vimbegood.vim
 
 call plug#end()
 
 lua require('nouillet')
 
+"-------------------------------------------------------------------------------
+"
+" File Mappings
+"
+"-------------------------------------------------------------------------------
+let g:coc_filetype_map = {
+  \ 'yaml.ansible': 'ansible',
+  \ }
 "-------------------------------------------------------------------------------
 "
 " Stuff that must be called at the end

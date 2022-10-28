@@ -1,0 +1,1 @@
+Plug 'rodjek/vim-puppet'
