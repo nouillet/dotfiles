@@ -196,7 +196,6 @@ bindsym $mod+ctrl+Left resize grow width 10 px or 10 ppt
 exec --no-startup-id nm-applet
 
 # Keyboard Layout Switch
-bindsym $mod+u exec "setxkbmap -layout us"
 bindsym $mod+c exec "setxkbmap -layout ca"
 
 # Lock Screen 
