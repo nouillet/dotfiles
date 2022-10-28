@@ -1,6 +1,8 @@
 Plug 'pearofducks/ansible-vim'
 
 let g:ansible_goto_role_paths = './roles'
+let g:ansible_extra_keywords_highlight = 1
+let g:ansible_name_highlight = 'b'
 
 function! FindAnsibleRoleUnderCursor()
   if exists("g:ansible_goto_role_paths")
