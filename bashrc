@@ -214,7 +214,7 @@ source ~/.aliases
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-PATH=$HOME/.rbenv/bin:$HOME/local/bin:/Python/python310/bin:/Python/python38/bin:/Python/python37/bin:/Python/python27/bin:$PYENV_ROOT/bin:$HOME/Projects/CI/ludiasdk3-deployment/Scripts/ci/jenkins/cli:$HOME/.local/jdks/amazon-corretto-11/bin:$HOME/.local/scripts:/opt/nodejs/current/bin:$PATH
+PATH=/opt/golang/current/bin:/opt/maven/current/bin:$HOME/.rbenv/bin:$HOME/local/bin:/Python/python310/bin:/Python/python38/bin:/Python/python37/bin:/Python/python27/bin:$PYENV_ROOT/bin:$HOME/Projects/CI/ludiasdk3-deployment/Scripts/ci/jenkins/cli:$HOME/.local/jdks/amazon-corretto-11/bin:$HOME/.local/scripts:/opt/nodejs/current/bin:$PATH
 eval "$(rbenv init -)"
 
 ####################################################################
