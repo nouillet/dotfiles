@@ -1,5 +1,34 @@
 {
+    "ansible.ansible.path": "/home/kpelletier/venvs/python38/.venv/bin",
+    "ansible.python.interpreterPath": "/home/kpelletier/venvs/python38/.venv/bin/python",
+    "ansible.validation.lint.enabled": false,
+
     "languageserver": {
+        "ansible": {
+            "command": "ansible-language-server",
+            "filetypes": ["ansible", "yaml.ansible"],
+            "args": ["--stdio"]
+        },
+        "bash": {
+            "command": "bash-language-server",
+            "args": ["start"],
+            "filetypes": ["sh"]
+        },
+        "dockerfile": {
+            "command": "docker-langserver",
+            "filetypes": ["dockerfile"],
+            "args": ["--stdio"]
+        },
+        "golang": {
+            "command": "gopls",
+            "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
+            "filetypes": ["go"]
+        },
+        "groovy": {
+            "command": "java",
+            "args": ["-jar", "/home/kpelletier/GitHub/groovy-language-server/build/libs/groovy-language-server-all.jar"],
+            "filetypes": ["groovy"]
+        },
         "puppet":{
             "command": "ruby",
             "args": ["/home/kpelletier/GitHub/puppet-editor-services/puppet-languageserver","--stdio","--puppet-settings=--moduledir,/home/kpelletier/Projects/Infra/puppet/modules"],
@@ -7,24 +36,18 @@
             "filetypes": ["puppet"],
             "rootPatterns": [".git/", "metadata.json"]
         },
-        "bash": {
-            "command": "bash-language-server",
-            "args": ["start"],
-            "filetypes": ["sh"]
-        },
-        "golang": {
-            "command": "gopls",
-            "rootPatterns": ["go.mod", ".vim/", ".git/", ".hg/"],
-            "filetypes": ["go"]
-        },
-        "dockerfile": {
-            "command": "docker-langserver",
-            "filetypes": ["dockerfile"],
-            "args": ["--stdio"]
-        },
         "python":{
             "command": "python",
             "filetypes": ["python"]
+        },
+        "terraform": {
+            "command": "terraform-lsp",
+            "initializationOptions": {},
+            "filetypes": ["terraform"]
+        },
+        "typescript": {
+            "filetypes": ["ts"],
+            "module": ""
         }
     }
 }
