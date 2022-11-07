@@ -93,7 +93,7 @@ source ~/.config/nvim/plugins/gruvbox.vim
 " source ~/.config/nvim/plugins/fzf.vim
 source ~/.config/nvim/plugins/lsp.vim
 " source ~/.config/nvim/plugins/nvim-lint.vim
-" source ~/.config/nvim/plugins/nvim-jdtls.vim
+source ~/.config/nvim/plugins/nvim-jdtls.vim
 source ~/.config/nvim/plugins/markdown-preview.vim
 source ~/.config/nvim/plugins/nvim-telescope.vim
 " source ~/.config/nvim/plugins/nvim-treesitter.vim
