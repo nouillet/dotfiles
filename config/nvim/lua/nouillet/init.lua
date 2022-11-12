@@ -134,6 +134,8 @@ require'lspconfig'.dockerls.setup{
 }
 
 require'lspconfig'.gradle_ls.setup {
+  on_attach = on_attach,
+  flags = lsp_flags,
   cmd = {
     "/home/kpelletier/GitHub/vscode-gradle/gradle-language-server/build/install/gradle-language-server/bin/gradle-language-server"
   }
