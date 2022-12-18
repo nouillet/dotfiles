@@ -211,10 +211,11 @@ export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 
 source ~/.config/git/git-prompt.sh
 source ~/.aliases
+source "/home/nouillet/.sdkman/bin/sdkman-init.sh"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-PATH=/opt/golang/current/bin:/opt/maven/current/bin:$HOME/.rbenv/bin:$HOME/local/bin:/Python/python310/bin:/Python/python38/bin:/Python/python37/bin:/Python/python27/bin:$PYENV_ROOT/bin:$HOME/Projects/CI/ludiasdk3-deployment/Scripts/ci/jenkins/cli:$HOME/.local/jdks/amazon-corretto-11/bin:$HOME/.local/scripts:/opt/nodejs/current/bin:$PATH
+PATH=/opt/golang/current/bin:/opt/maven/current/bin:$HOME/.rbenv/bin:$HOME/local/neovim/bin:$HOME/local/bin:$PYENV_ROOT/bin:$HOME/Projects/CI/ludiasdk3-deployment/Scripts/ci/jenkins/cli:$HOME/.local/jdks/amazon-corretto-11/bin:$HOME/.local/scripts:/opt/nodejs/current/bin:$PATH
 eval "$(rbenv init -)"
 
 ####################################################################
@@ -225,3 +226,7 @@ eval "$(rbenv init -)"
 
 bind -x '"\C-f": tmux-sessionizer'
 
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"

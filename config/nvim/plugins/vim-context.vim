@@ -1,1 +1,0 @@
-Plug 'wellle/context.vim'

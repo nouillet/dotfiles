@@ -198,7 +198,7 @@ exec --no-startup-id nm-applet
 # Keyboard Layout Switch
 bindsym $mod+c exec "setxkbmap -layout ca"
 
-# Lock Screen 
+# Lock Screen
 bindsym Control+$mod+l exec "xset dpms force off && i3lock -c 000000"
 
 # Wallpaper
