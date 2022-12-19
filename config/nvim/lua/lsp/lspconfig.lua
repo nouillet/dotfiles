@@ -152,12 +152,12 @@ require'lspconfig'.ansiblels.setup {
   settings = {
     ansible = {
       python = {
-        activationScript = "/home/kpelletier/Projects/CI/Ansible/.venv/bin/activate"
+        activationScript = "/home/nouillet/Projects/Ansible/.venv/bin/activate"
       },
       validation = {
         enabled = true,
         lint = {
-          enabled = false
+          enabled = true
         },
       }
     }
@@ -168,7 +168,7 @@ require'lspconfig'.gradle_ls.setup {
   on_attach = on_attach,
   flags = lsp_flags,
   cmd = {
-    "/home/kpelletier/GitHub/vscode-gradle/gradle-language-server/build/install/gradle-language-server/bin/gradle-language-server"
+    "/home/nouillet/Projects/vscode-gradle/gradle-language-server/build/install/gradle-language-server/bin/gradle-language-server"
   }
 }
 
@@ -176,7 +176,7 @@ require'lspconfig'.groovyls.setup{
   on_attach = on_attach,
   flags = lsp_flags,
   cmd = {
-    "java", "-jar", "/home/kpelletier/GitHub/groovy-language-server/build/libs/groovy-language-server-all.jar"
+    "java", "-jar", "/home/nouillet/Projects/groovy-language-server/build/libs/groovy-language-server-all.jar"
   }
 }
 
