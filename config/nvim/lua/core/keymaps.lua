@@ -25,9 +25,6 @@ map('', '<down>', '<nop>')
 map('', '<left>', '<nop>')
 map('', '<right>', '<nop>')
 
--- Map Esc to kk
-map('i', 'kk', '<Esc>')
-
 -- Clear search highlighting with <leader> and c
 map('n', '<leader>c', ':nohl<CR>')
 
@@ -66,13 +63,19 @@ map('t', '<Esc>', '<C-\\><C-n>')                    -- exit
 
 -- NvimTree
 map('n', '<C-n>', ':NvimTreeToggle<CR>')            -- open/close
-map('n', '<leader>f', ':NvimTreeRefresh<CR>')       -- refresh
-map('n', '<leader>n', ':NvimTreeFindFile<CR>')      -- search file
 
 -- Tagbar
 map('n', '<leader>z', ':TagbarToggle<CR>')          -- open/close
 
 -- Telescope mappings
-vim.keymap.set('n', '<leader>f', builtin.find_files, {})
-vim.keymap.set('n', '<leader>g', builtin.live_grep, {})
-vim.keymap.set('n', '<leader>b', builtin.buffers, {})
+map('n', '<leader>f', ':Telescope find_files<CR>')
+map('n', '<leader>g', ':Telescope grep_string<CR>')
+map('n', '<leader>G', ':Telescope live_grep<CR>')
+
+-- Harpoon!
+map('n', '<leader>1', ':lua require("harpoon.tmux").gotoTerminal(1)<CR>')
+map('n', '<leader>2', ':lua require("harpoon.tmux").gotoTerminal(2)<CR>')
+
+-- Custom Mapping
+vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
+

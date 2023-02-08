@@ -1,4 +1,4 @@
-----------------------------------------------------------
+-----------------------------------------------------------
 -- Plugin manager configuration file
 -----------------------------------------------------------
 
@@ -68,7 +68,12 @@ return packer.startup(function(use)
   use 'lewis6991/gitsigns.nvim'
 
   -- File explorer
-  use 'kyazdani42/nvim-tree.lua'
+  use {
+    'nvim-tree/nvim-tree.lua',
+    requires = {
+      'nvim-tree/nvim-web-devicons', -- optional, for file icons
+    },
+  }
 
   -- Indent line
   use 'lukas-reineke/indent-blankline.nvim'
@@ -90,7 +95,7 @@ return packer.startup(function(use)
   -- Treesitter interface
   use {
     'nvim-treesitter/nvim-treesitter',
-    run = function() require('nvim-treesitter.install').update({ with_sync = true }) end,
+      run = ':TSUpdate'
   }
 
   -- Color schemes
@@ -102,6 +107,7 @@ return packer.startup(function(use)
   -- LSP
   use 'neovim/nvim-lspconfig'
   use 'mfussenegger/nvim-jdtls'
+  use 'williamboman/mason.nvim'
 
   -- Autocomplete
   use {
@@ -123,6 +129,7 @@ return packer.startup(function(use)
     'nvim-telescope/telescope.nvim', tag = '0.1.0',
     requires = { {'nvim-lua/plenary.nvim'} }
   }
+  use 'ThePrimeagen/harpoon'
 
   -- Dashboard (start screen)
   use {

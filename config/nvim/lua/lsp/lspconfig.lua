@@ -133,19 +133,6 @@ local servers = {
   'tflint'
 }
 
--- Call setup
-for _, lsp in ipairs(servers) do
-  lspconfig[lsp].setup {
-    on_attach = on_attach,
-    root_dir = root_dir,
-    capabilities = capabilities,
-    flags = {
-      -- default in neovim 0.7+
-      debounce_text_changes = 150,
-    }
-  }
-end
-
 require'lspconfig'.ansiblels.setup {
   on_attach = on_attach,
   flags = lsp_flags,
@@ -164,6 +151,14 @@ require'lspconfig'.ansiblels.setup {
   }
 }
 
+require'lspconfig'.bashls.setup {
+  on_attach = on_attach,
+  flags = lsp_flags,
+  cmd = {
+    "/home/nouillet/.local/share/nvim/mason/bin/bash-language-server"
+  }
+}
+
 require'lspconfig'.gradle_ls.setup {
   on_attach = on_attach,
   flags = lsp_flags,
@@ -177,17 +172,6 @@ require'lspconfig'.groovyls.setup{
   flags = lsp_flags,
   cmd = {
     "java", "-jar", "/home/nouillet/Projects/groovy-language-server/build/libs/groovy-language-server-all.jar"
-  }
-}
-
-require'lspconfig'.puppet.setup{
-  on_attach = on_attach,
-  flags = lsp_flags,
-  cmd = {
-    "/home/kpelletier/GitHub/puppet-editor-services/puppet-languageserver", "--stdio", "--puppet-settings=--moduledir", "/home/kpelletier/Projects/Infra/puppet/modules"
-  },
-  filetypes = {
-    "puppet"
   }
 }
 
