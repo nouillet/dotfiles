@@ -1,0 +1,46 @@
+[oh-my-zsh]
+  hide-status = 1
+  hide-dirty = 1
+[user]
+  name = Kevin Pelletier
+  email = kev.pelletier@icloud.com
+  signingkey = C2EB4CCA82537B03666CC0EF7DCC32A8CD4DB250
+[commit]
+  gpgsign = true
+[core]
+  editor = nvim
+  autocrlf = input
+[format]
+  pretty = format:%C(auto,yellow)%h%C(auto,magenta)% G? %C(auto,blue)%ad %C(auto,green) %aN%C(auto,reset) %s%C(auto,red)% gD% D
+[filter "lfs"]
+  process = git-lfs filter-process
+  required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+[init]
+	templateDir = /home/nouillet/.git-template
+[pull]
+  rebase = false
+[log]
+	date = local
+[alias]
+	co = checkout
+	phfr = push -f
+	ci = commit
+	st = status
+	re = restore
+	df = diff
+	cia = commit --amend
+	ph = push
+	newb = checkout -b
+	rmb = branch -d
+	reb = pull --rebase
+	pl = pull
+[push]
+	autoSetupRemote = true
+[difftool]
+    prompt = true
+[diff]
+    tool = nvimdiff
+[difftool "nvimdiff"]
+    cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
