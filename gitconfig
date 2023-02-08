@@ -1,15 +1,18 @@
-[oh-my-zsh]
-  hide-status = 1
-  hide-dirty = 1
 [user]
-  name = Kevin Pelletier
-  email = kev.pelletier@icloud.com
-  signingkey = C2EB4CCA82537B03666CC0EF7DCC32A8CD4DB250
-[commit]
-  gpgsign = true
+	name = Kevin Pelletier
+	email = kev.pelletier@icloud.com
+	signingkey = F2B33A18BE99556C
+[pull]
+	rebase = false
+[init]
+	defaultBranch = main
 [core]
-  editor = nvim
-  autocrlf = input
+	editor = /home/nouillet/local/bin/nvim
+  	autocrlf = input
+[commit]
+	gpgsign = true
+[gpg]
+	format = openpgp
 [format]
   pretty = format:%C(auto,yellow)%h%C(auto,magenta)% G? %C(auto,blue)%ad %C(auto,green) %aN%C(auto,reset) %s%C(auto,red)% gD% D
 [filter "lfs"]
@@ -19,8 +22,6 @@
   smudge = git-lfs smudge -- %f
 [init]
 	templateDir = /home/nouillet/.git-template
-[pull]
-  rebase = false
 [log]
 	date = local
 [alias]
