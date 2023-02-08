@@ -211,11 +211,12 @@ export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 
 source ~/.config/git/git-prompt.sh
 source ~/.aliases
-source "/home/nouillet/.sdkman/bin/sdkman-init.sh"
+command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
+eval "$(pyenv init -)"
 
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-PATH=/opt/golang/current/bin:/opt/maven/current/bin:$HOME/.rbenv/bin:$HOME/local/neovim/bin:$HOME/local/bin:$PYENV_ROOT/bin:$HOME/Projects/CI/ludiasdk3-deployment/Scripts/ci/jenkins/cli:$HOME/.local/jdks/amazon-corretto-11/bin:$HOME/.local/scripts:/opt/nodejs/current/bin:$PATH
+PATH=/opt/golang/current/bin:$HOME/.rbenv/bin:$HOME/local/bin:$PYENV_ROOT/bin:$HOME/.local/scripts:/opt/nodejs/current/bin:$PATH
 eval "$(rbenv init -)"
 
 ####################################################################
