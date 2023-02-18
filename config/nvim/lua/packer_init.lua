@@ -1,6 +1,4 @@
------------------------------------------------------------
 -- Plugin manager configuration file
------------------------------------------------------------
 
 -- Plugin manager: packer.nvim
 -- url: https://github.com/wbthomason/packer.nvim
@@ -135,6 +133,11 @@ return packer.startup(function(use)
   use {
     'goolord/alpha-nvim',
     requires = { 'kyazdani42/nvim-web-devicons' },
+  }
+
+  -- Automatic comments on various types of coding languages
+  use {
+    'tpope/vim-commentary'
   }
 
   -- Automatically set up your configuration after cloning packer.nvim
