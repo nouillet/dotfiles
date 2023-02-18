@@ -133,6 +133,11 @@ local servers = {
   'tflint'
 }
 
+local lsp_flags = {
+  -- This is the default in Nvim 0.7+
+  debounce_text_changes = 150,
+}
+
 require'lspconfig'.ansiblels.setup {
   on_attach = on_attach,
   flags = lsp_flags,
@@ -165,6 +170,11 @@ require'lspconfig'.gradle_ls.setup {
   cmd = {
     "/home/nouillet/Projects/vscode-gradle/gradle-language-server/build/install/gradle-language-server/bin/gradle-language-server"
   }
+}
+
+require'lspconfig'.lua_ls.setup {
+  on_attach = on_attach,
+  flags = lsp_flags
 }
 
 require'lspconfig'.groovyls.setup{
