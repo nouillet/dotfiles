@@ -1,42 +1,55 @@
 [user]
-	name = Kevin Pelletier
+ 	name = Kevin Pelletier
 	email = kev.pelletier@icloud.com
 	signingkey = F2B33A18BE99556C
 [pull]
 	rebase = false
-[init]
-	defaultBranch = main
-[core]
-	editor = /home/nouillet/local/bin/nvim
-  	autocrlf = input
 [commit]
-	gpgsign = true
-[gpg]
-	format = openpgp
+  	gpgsign = true
+[core]
+  	editor = nvim
+  	autocrlf = input
 [format]
-  pretty = format:%C(auto,yellow)%h%C(auto,magenta)% G? %C(auto,blue)%ad %C(auto,green) %aN%C(auto,reset) %s%C(auto,red)% gD% D
+  	pretty = format:%C(auto,yellow)%h%C(auto,magenta)% G? %C(auto,blue)%ad %C(auto,green) %aN%C(auto,reset) %s%C(auto,red)% gD% D
 [filter "lfs"]
-  process = git-lfs filter-process
-  required = true
-  clean = git-lfs clean -- %f
-  smudge = git-lfs smudge -- %f
+  	process = git-lfs filter-process
+  	required = true
+  	clean = git-lfs clean -- %f
+  	smudge = git-lfs smudge -- %f
 [init]
 	templateDir = /home/nouillet/.git-template
+	defaultBranch = main
+[pull]
+  	rebase = false
 [log]
 	date = local
 [alias]
-	co = checkout
-	phfr = push -f
+	cb = checkout -b
 	ci = commit
-	st = status
-	re = restore
-	df = diff
 	cia = commit --amend
+	clone-for-worktrees = "!sh $HOME/.local/scripts/git-worktree"
+	co = checkout
+	cp = cherry-pick
+	dellb = branch -D
+	delrb = push origin --delete
+	df = diff
+	dfs = diff --staged
 	ph = push
-	newb = checkout -b
-	rmb = branch -d
-	reb = pull --rebase
+	pha = push --all
+	phf = push -f
+	phtg = push --tags
 	pl = pull
+	re = restore
+	reb = pull --rebase
+	rst = restore --staged
+	st = status
+	wt = worktree
+	# Basically creates a folder of the same name that either the remote branch name is or the new branch I'll be working on
+	wta = "!f() { git worktree add $1 $1; }; f"
+	wtab = "!f() { git worktree add -b $1 $1; }; f"
+	wtls = worktree list
+	wtrm = worktree remove
+	wtup = "!bash $HOME/.local/scripts/git-worktree-update"
 [push]
 	autoSetupRemote = true
 [difftool]
@@ -45,3 +58,14 @@
     tool = nvimdiff
 [difftool "nvimdiff"]
     cmd = "nvim -d \"$LOCAL\" \"$REMOTE\""
+[merge]
+    tool = fugitive
+[mergetool]
+    keepBackup = false
+[mergetool "fugitive"]
+    cmd = nvim -f -c \"Gdiffsplit!\" \"$MERGED\"
+[fetch]
+	prune = true
+	pruneTags = true
+[tag]
+	sort = -version:refname
