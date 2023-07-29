@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+update_default_branch() {
+  local DEFAULT_BRANCH=$(git remote show origin | sed -n '/HEAD branch/s/.*: //p')
+
+  cd "$DEFAULT_BRANCH"
+  exec $SHELL
+  git pull
+}
+
+update_default_branch
