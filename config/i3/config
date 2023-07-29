@@ -193,16 +193,18 @@ bindsym $mod+ctrl+Left resize grow width 10 px or 10 ppt
 
 
 ### Custom stuff ###
+
+# Network Manager Desktop App
 exec --no-startup-id nm-applet
+
+# Lock Screen
+bindsym Control+$mod+l exec "i3lock -t -i ~/.local/images/LockScreen.png"
 
 # Keyboard Layout Switch
 bindsym $mod+c exec "setxkbmap -layout ca"
 
-# Lock Screen
-bindsym Control+$mod+l exec "xset dpms force off && i3lock -c 000000"
-
 # Wallpaper
-exec --no-startup-id "feh --bg-scale ~/Pictures/batman.jpg"
+exec --no-startup-id "feh --bg-scale ~/.local/images/batman.jpg"
 
 # Screenshots
 bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date)"
@@ -221,5 +223,5 @@ bindsym $mod+p exec --no-startup-id pavucontrol
 bindsym Ctrl+$mod+C exec --no-startup-id bluetoothctl connect F8:4E:17:4A:0E:BF
 bindsym Ctrl+$mod+D exec --no-startup-id bluetoothctl disconnect F8:4E:17:4A:0E:BF
 
-# Compton
+# Compton. Terminal stuff for cool Batman
 exec --no-startup-id compton
