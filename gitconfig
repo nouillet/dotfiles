@@ -64,8 +64,5 @@
     keepBackup = false
 [mergetool "fugitive"]
     cmd = nvim -f -c \"Gdiffsplit!\" \"$MERGED\"
-[fetch]
-	prune = true
-	pruneTags = true
 [tag]
 	sort = -version:refname
