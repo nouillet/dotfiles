@@ -97,17 +97,6 @@ vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
 vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
 vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
 
---[[
-Language servers setup:
-For language servers list see:
-https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md
-Language server installed:
-Bash          -> bashls
-Python        -> pyright
-C-C++         -> clangd
-HTML/CSS/JSON -> vscode-html-languageserver
-JavaScript/TypeScript -> tsserver
---]]
 
 -- Define `root_dir` when needed
 -- See: https://github.com/neovim/nvim-lspconfig/issues/320
@@ -116,27 +105,8 @@ local root_dir = function()
   return vim.fn.getcwd()
 end
 
--- Use a loop to conveniently call 'setup' on multiple servers and
--- map buffer local keybindings when the language server attaches.
--- Add your language server below:
-local servers = {
-  'ansiblels',
-  'bashls',
-  'dockerls',
-  'gradle_ls',
-  'groovyls',
-  'puppet',
-  'pylsp',
-  'pyright',
-  'solargraph',
-  'terraformls',
-  'tflint'
-}
+local lsp_flags = { debounce_text_changes = 150 }
 
-local lsp_flags = {
-  -- This is the default in Nvim 0.7+
-  debounce_text_changes = 150,
-}
 
 require'lspconfig'.ansiblels.setup {
   on_attach = on_attach,
@@ -160,33 +130,32 @@ require'lspconfig'.bashls.setup {
   on_attach = on_attach,
   flags = lsp_flags,
   cmd = {
-    "/home/nouillet/.local/share/nvim/mason/bin/bash-language-server"
+    "/home/nouillet/.local/share/nvim/mason/bin/bash-language-server",
+    "start"
   }
 }
 
-require'lspconfig'.gradle_ls.setup {
+require'lspconfig'.dockerls.setup {
   on_attach = on_attach,
   flags = lsp_flags,
   cmd = {
-    "/home/nouillet/Projects/vscode-gradle/gradle-language-server/build/install/gradle-language-server/bin/gradle-language-server"
+    "/home/nouillet/.local/share/nvim/mason/bin/docker-langserver",
+    "--stdio"
   }
 }
 
-require'lspconfig'.lua_ls.setup {
-  on_attach = on_attach,
-  flags = lsp_flags
+require'lspconfig'.docker_compose_language_service.setup { on_attach = on_attach,
+  flags = lsp_flags,
+  cmd = {
+    "/home/nouillet/.local/share/nvim/mason/bin/docker-compose-langserver",
+    "--stdio"
+  }
 }
 
-require'lspconfig'.groovyls.setup{
+require'lspconfig'.pylsp.setup {
   on_attach = on_attach,
   flags = lsp_flags,
   cmd = {
-    "java", "-jar", "/home/nouillet/Projects/groovy-language-server/build/libs/groovy-language-server-all.jar"
+    "/home/nouillet/.local/share/nvim/mason/bin/pylsp"
   }
 }
-
-require'lspconfig'.solargraph.setup{
-  on_attach = on_attach,
-  flags = lsp_flags,
-}
-
