@@ -1,4 +1,4 @@
 alias ..='cd ..'
 alias ...='cd ../..'
-alias vim='$HOME/local/neovim/bin/nvim'
+alias vim='$HOME/.local/bin/nvim'
 alias tma='tmux attach -t $1'
