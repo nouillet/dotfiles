@@ -1,4 +1,6 @@
+-----------------------------------------------------------
 -- Plugin manager configuration file
+-----------------------------------------------------------
 
 -- Plugin manager: packer.nvim
 -- url: https://github.com/wbthomason/packer.nvim
@@ -128,6 +130,7 @@ return packer.startup(function(use)
     requires = { {'nvim-lua/plenary.nvim'} }
   }
   use 'ThePrimeagen/harpoon'
+  use 'ThePrimeagen/git-worktree.nvim'
 
   -- Dashboard (start screen)
   use {
@@ -135,11 +138,7 @@ return packer.startup(function(use)
     requires = { 'kyazdani42/nvim-web-devicons' },
   }
 
-  -- Automatic comments on various types of coding languages
-  use {
-    'tpope/vim-commentary'
-  }
-
+  use 'tpope/vim-commentary'
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
   if packer_bootstrap then

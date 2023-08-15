@@ -114,6 +114,11 @@ _G.packer_plugins = {
     path = "/home/nouillet/.local/share/nvim/site/pack/packer/start/feline.nvim",
     url = "https://github.com/feline-nvim/feline.nvim"
   },
+  ["git-worktree.nvim"] = {
+    loaded = true,
+    path = "/home/nouillet/.local/share/nvim/site/pack/packer/start/git-worktree.nvim",
+    url = "https://github.com/ThePrimeagen/git-worktree.nvim"
+  },
   ["gitsigns.nvim"] = {
     loaded = true,
     path = "/home/nouillet/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",

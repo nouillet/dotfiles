@@ -76,6 +76,10 @@ map('n', '<leader>G', ':Telescope live_grep<CR>')
 map('n', '<leader>1', ':lua require("harpoon.tmux").gotoTerminal(1)<CR>')
 map('n', '<leader>2', ':lua require("harpoon.tmux").gotoTerminal(2)<CR>')
 
+-- Git Worktrees
+map('n', '<space>c', ':lua require("telescope").extensions.git_worktree.create_git_worktree()<CR>')
+map('n', '<space>w', ':lua require("telescope").extensions.git_worktree.git_worktrees()<CR>')
+
 -- Custom Mapping
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
 
