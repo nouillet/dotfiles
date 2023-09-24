@@ -132,12 +132,6 @@ return packer.startup(function(use)
   use 'ThePrimeagen/harpoon'
   use 'ThePrimeagen/git-worktree.nvim'
 
-  -- Dashboard (start screen)
-  use {
-    'goolord/alpha-nvim',
-    requires = { 'kyazdani42/nvim-web-devicons' },
-  }
-
   use 'tpope/vim-commentary'
   -- Automatically set up your configuration after cloning packer.nvim
   -- Put this at the end after all plugins
