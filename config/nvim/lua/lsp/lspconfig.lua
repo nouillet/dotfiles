@@ -114,7 +114,7 @@ require'lspconfig'.ansiblels.setup {
   settings = {
     ansible = {
       python = {
-        activationScript = "/home/nouillet/Projects/Ansible/.venv/bin/activate"
+        activationScript = "/home/nouillet/.pyenv/versions/ansible/bin/activate"
       },
       validation = {
         enabled = true,
