@@ -57,9 +57,8 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    # PS1='\[\033[34m\]\w\[\033[01;33m\] \033[01;35m\]$\033[01;33m\]$(__git_ps1 " (%s)") \033[00m\]'
     PS1='${debian_chroot:+($debian_chroot)}\[\033[32m\]\[\033[00m\]\[\033[34m\]\w\[\033[01;33m\]$(__git_ps1 " (%s)") \[\033[00m\]$ '
-#    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[33m\]$(__git_ps1 " (%s)") \[\033[00m\]$ '
+    # PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 else
     PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
 fi
@@ -86,22 +85,9 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
-# colored GCC warnings and errors
-#export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
-
-# some more ls aliases
-alias ll='ls -alF'
-alias la='ls -A'
-alias l='ls -CF'
-
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
-
-# Alias definitions.
-# You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
-# See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
@@ -133,7 +119,7 @@ function cd() {
   builtin cd "$@"
 
   ## Default path to virtualenv in your projects
-  DEFAULT_ENV_PATH="./env"
+  DEFAULT_ENV_PATH="./.venv"
 
   ## If env folder is found then activate the vitualenv
   function activate_venv() {
@@ -159,6 +145,8 @@ function cd() {
 }
 
 __complete_ssh_host() {
+    # Custom function that autocompletes hosts based on ssh_config.
+
     local CONFIG_FILE=~/.ssh/config
     local CONFIG_LIST=`awk '/^Host [A-Za-z]+/ {print $2}' $CONFIG_FILE`
 
@@ -176,32 +164,23 @@ __complete_tmux_sessions() {
     COMPREPLY=( $(compgen -W "$SESSIONS_LIST" -- "$PARTIAL_WORD") )
 }
 
-
 complete -F __complete_ssh_host ssh
 complete -f -F __complete_ssh_host scp
 complete -F __complete_tmux_sessions tma
-
-create_view() {
-    ssh -p 45679 $1 create-view < $2
-}
 
 if type rg &> /dev/null; then
   export FZF_DEFAULT_COMMAND='rg --files'
   export FZF_DEFAULT_OPTS='-m --height 50% --border'
 fi
 
-
 ####################################################################
 #                                                                  #
 # Exports                                                          #
 #                                                                  #
 ####################################################################
-
-export SVN_EDITOR=nvim
 export KUBE_EDITOR=nvim
 export PYENV_ROOT=$HOME/.pyenv
 export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
-
 
 ####################################################################
 #                                                                  #
@@ -209,26 +188,29 @@ export SSH_AUTH_SOCK=~/.ssh/ssh_auth_sock
 #                                                                  #
 ####################################################################
 
-source ~/.config/git/git-prompt.sh
-source ~/.aliases
+# PyEnv https://github.com/pyenv/pyenv
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+# SDKMan https://sdkman.io/
+export SDKMAN_DIR="$HOME/.sdkman"
+[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+
+# Fuzzy Finder https://github.com/junegunn/fzf
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
 
-PATH=/opt/golang/current/bin:$HOME/.rbenv/bin:$HOME/local/bin:$PYENV_ROOT/bin:$HOME/.local/scripts:/opt/nodejs/current/bin:$PATH
-eval "$(rbenv init -)"
+# Custom Scripts
+PATH=$PATH:$HOME/.local/scripts
 
 ####################################################################
 #                                                                  #
 # Macros                                                           #
 #                                                                  #
 ####################################################################
-
 bind -x '"\C-f": tmux-sessionizer'
 
 
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="$HOME/.sdkman"
-[[ -s "$HOME/.sdkman/bin/sdkman-init.sh" ]] && source "$HOME/.sdkman/bin/sdkman-init.sh"
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
