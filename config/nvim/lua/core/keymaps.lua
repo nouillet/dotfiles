@@ -72,10 +72,6 @@ map('n', '<leader>f', ':Telescope find_files<CR>')
 map('n', '<leader>g', ':Telescope grep_string<CR>')
 map('n', '<leader>G', ':Telescope live_grep<CR>')
 
--- Harpoon!
-map('n', '<leader>1', ':lua require("harpoon.tmux").gotoTerminal(1)<CR>')
-map('n', '<leader>2', ':lua require("harpoon.tmux").gotoTerminal(2)<CR>')
-
 -- Git Worktrees
 map('n', '<space>c', ':lua require("telescope").extensions.git_worktree.create_git_worktree()<CR>')
 map('n', '<space>w', ':lua require("telescope").extensions.git_worktree.git_worktrees()<CR>')

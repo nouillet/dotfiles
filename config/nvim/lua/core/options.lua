@@ -61,7 +61,7 @@ vim.cmd([[
 	autocmd BufNewFile,BufRead *.profile set filetype=yaml
 	autocmd BufNewFile,BufRead *.pkr.hcl set filetype=terraform
 	au BufRead,BufNewFile */Ansible/*.yml set filetype=yaml.ansible
-au BufRead,BufNewFile */Ansible/hosts set filetype=ansible_hosts
+  au BufRead,BufNewFile */Ansible/hosts set filetype=ansible_hosts
 ]])
 
 -----------------------------------------------------------
