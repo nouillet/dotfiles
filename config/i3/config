@@ -45,7 +45,7 @@ bindsym XF86AudioMicMute exec --no-startup-id pactl set-source-mute @DEFAULT_SOU
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec $HOME/local/bin/alacritty
+bindsym $mod+Return exec $HOME/.local/bin/alacritty
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -194,8 +194,14 @@ bindsym $mod+ctrl+Left resize grow width 10 px or 10 ppt
 
 ### Custom stuff ###
 
+# Setup monitors
+exec --no-startup-id "xrandr --output DP-2 --rotate left"
+
 # Network Manager Desktop App
 exec --no-startup-id nm-applet
+
+# Setup Fr-CA Keyboard layout
+exec --no-startup-id "setxkbmap -layout ca"
 
 # Lock Screen
 bindsym Control+$mod+l exec "i3lock -t -i ~/.local/images/LockScreen.png"
