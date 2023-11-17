@@ -68,17 +68,20 @@ font:
   # The normal (roman) font face to use.
   # Style can be specified to pick a specific face.
   normal:
-    family: "Comic Code"
+    family: "ComicCode Nerd Font"
+    # family: "CaskaydiaCode NF"
+    # family: "CaskaydiaCove Nerd Font"
+    # family: "RobotoMono Nerd Font"
     style: Regular
 
   # The bold font face
   bold:
-    family: "Comic Code"
+    family: "ComicCode Nerd Font"
     style: Bold
 
   # The italic font face
   italic:
-    family: "Comic Code"
+    family: "ComicCode Nerd Font"
     style: Italic
 
   # Point size of the font
