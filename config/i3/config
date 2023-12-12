@@ -225,9 +225,10 @@ bindsym Ctrl+Shift+Print exec --no-startup-id maim --select | xclip -selection c
 ## Sound Settings
 bindsym $mod+p exec --no-startup-id pavucontrol
 
-## Bluetooth WH1000-XM4 connection
+## Bluetooth connections
 bindsym Ctrl+$mod+C exec --no-startup-id bluetoothctl connect F8:4E:17:4A:0E:BF
 bindsym Ctrl+$mod+D exec --no-startup-id bluetoothctl disconnect F8:4E:17:4A:0E:BF
+bindsym Ctrl+$mod+M exec --no-startup-id bluetoothctl connect C2:8C:EA:53:C7:03
 
 # Compton. Terminal stuff for cool Batman
 exec --no-startup-id compton
