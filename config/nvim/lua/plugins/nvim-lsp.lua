@@ -31,14 +31,19 @@ return {
       handlers = {
         lsp_zero.default_setup,
       },
-      -- Example for overrides
-      require('lspconfig').ansiblels.setup({
-        settings = {
-          ansible = {
-            path = "/home/nouillet/Projects/Ansible/"
-          }
-        },
-      })
+      -- -- Example for overrides
+      -- require('lspconfig').ansiblels.setup({
+      --   settings = {
+      --     ansible = {
+      --       ansible = {
+      --         path = "/home/nouillet/Projects/Ansible/"
+      --       },
+      --       python = {
+      --         interpreterPath = "/home/nouillet/Projects/Ansible/.venv/"
+      --       }
+      --     }
+      --   },
+      -- })
     })
 
     --local lsp_status_ok, lspconfig = pcall(require, 'lspconfig')
@@ -124,8 +129,8 @@ return {
 
     ---- Mappings.
     ---- See `:help vim.diagnostic.*` for documentation on any of the below functions
-    --local opts = { noremap=true, silent=true }
-    --vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
+    local opts = { noremap=true, silent=true }
+    vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
     --vim.keymap.set('n', '[d', vim.diagnostic.goto_prev, opts)
     --vim.keymap.set('n', ']d', vim.diagnostic.goto_next, opts)
     --vim.keymap.set('n', '<space>q', vim.diagnostic.setloclist, opts)
