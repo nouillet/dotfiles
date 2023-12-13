@@ -24,6 +24,7 @@ return {
         'docker_compose_language_service',
         'dockerls',
         'lua_ls',
+        'gopls',
         'pylsp',
         'pyright',
         'terraformls'
@@ -44,8 +45,18 @@ return {
       --     }
       --   },
       -- })
+      require('lspconfig').gopls.setup({
+        settings = {
+          gopls = {
+            analyses = {
+              unusedparams = true,
+            },
+            staticcheck = true,
+            gofumpt = true,
+          },
+        },
+      })
     })
-
     --local lsp_status_ok, lspconfig = pcall(require, 'lspconfig')
     --if not lsp_status_ok then
     --  return
