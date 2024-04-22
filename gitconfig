@@ -24,6 +24,8 @@
 [log]
 	date = local
 [alias]
+    a  = add
+    aa = add --all
 	cb = checkout -b
 	ci = commit
 	cia = commit --amend
