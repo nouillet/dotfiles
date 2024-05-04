@@ -9,7 +9,7 @@
 #
 # Please see https://i3wm.org/docs/userguide.html for a complete reference!
 
-set $mod Mod1
+set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -51,7 +51,7 @@ bindsym $mod+Return exec alacritty
 bindsym $mod+Shift+q kill
 
 # start dmenu (a program launcher)
-bindsym $mod+d exec --no-startup-id dmenu_run -fn 'ComicCode'
+bindsym $mod+d exec --no-startup-id dmenu_run -fn 'ComicCode Nerd Font'
 # A more modern dmenu replacement is rofi:
 # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
 # There also is i3-dmenu-desktop which only displays applications shipping a
@@ -100,7 +100,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+# bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -182,7 +182,10 @@ bindsym $mod+r mode "resize"
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
+        # status_command i3status
+        status_command ~/.local/bin/bumblebee-status
+        font pango:Inconsolata 12
+        # font pango:Hack 12
 }
 
 # Window Resizing
@@ -193,9 +196,6 @@ bindsym $mod+ctrl+Left resize grow width 10 px or 10 ppt
 
 
 ### Custom stuff ###
-
-# Setup monitors
-exec --no-startup-id "xrandr --output DP-2 --rotate left"
 
 # Network Manager Desktop App
 exec --no-startup-id nm-applet
@@ -210,7 +210,7 @@ bindsym Control+$mod+l exec "i3lock -t -i ~/.local/images/LockScreen.png"
 bindsym $mod+c exec "setxkbmap -layout ca"
 
 # Wallpaper
-exec --no-startup-id "feh --bg-scale ~/.local/images/batman.jpg"
+exec --no-startup-id "feh --bg-scale ~/.local/images/zelda.jpg"
 
 # Screenshots
 bindsym Print exec --no-startup-id maim "/home/$USER/Pictures/$(date)"
