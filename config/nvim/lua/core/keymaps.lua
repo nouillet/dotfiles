@@ -13,7 +13,7 @@ end
 local builtin = require('telescope.builtin')
 
 -- Change leader to a comma
-vim.g.mapleader = ','
+-- vim.g.mapleader = ','
 
 -----------------------------------------------------------
 -- Neovim shortcuts
@@ -53,28 +53,18 @@ map('n', '<leader>q', ':qa!<CR>')
 
 -- Close current buffer
 map('n', '<leader>w', ':bd<CR>')
------------------------------------------------------------
+
+----------------------------------------------------------
 -- Applications and Plugins shortcuts
 -----------------------------------------------------------
-
--- Terminal mappings
-map('n', '<C-t>', ':Term<CR>', { noremap = true })  -- open
-map('t', '<Esc>', '<C-\\><C-n>')                    -- exit
 
 -- NvimTree
 map('n', '<C-n>', ':NvimTreeToggle<CR>')            -- open/close
 
--- Tagbar
-map('n', '<leader>z', ':TagbarToggle<CR>')          -- open/close
-
 -- Telescope mappings
-map('n', '<leader>f', ':Telescope find_files<CR>')
+map('n', '<leader>ff', ':Telescope find_files<CR>')
 map('n', '<leader>g', ':Telescope grep_string<CR>')
-map('n', '<leader>G', ':Telescope live_grep<CR>')
-
--- Git Worktrees
-map('n', '<space>c', ':lua require("telescope").extensions.git_worktree.create_git_worktree()<CR>')
-map('n', '<space>w', ':lua require("telescope").extensions.git_worktree.git_worktrees()<CR>')
+map('n', '<leader>fg', ':Telescope live_grep<CR>')
 
 -- Custom Mapping
 vim.keymap.set("n", "<C-f>", "<cmd>silent !tmux neww tmux-sessionizer<CR>")
