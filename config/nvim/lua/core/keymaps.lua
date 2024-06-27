@@ -10,27 +10,15 @@ local function map(mode, lhs, rhs, opts)
   vim.api.nvim_set_keymap(mode, lhs, rhs, options)
 end
 
-local builtin = require('telescope.builtin')
-
--- Change leader to a comma
--- vim.g.mapleader = ','
-
 -----------------------------------------------------------
 -- Neovim shortcuts
 -----------------------------------------------------------
-
--- Disable arrow keys
-map('', '<up>', '<nop>')
-map('', '<down>', '<nop>')
-map('', '<left>', '<nop>')
-map('', '<right>', '<nop>')
 
 -- Clear search highlighting with <leader> and c
 map('n', '<leader>c', ':nohl<CR>')
 
 -- Toggle auto-indenting for code paste
 map('n', '<F2>', ':set invpaste paste?<CR>')
-vim.opt.pastetoggle = '<F2>'
 
 -- Change split orientation
 map('n', '<leader>tk', '<C-w>t<C-w>K') -- change vertical to horizontal
