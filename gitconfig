@@ -44,7 +44,7 @@
 	re = restore
 	reb = pull --rebase
 	rst = restore --staged
-	st = status
+	st = status --short
 	wt = worktree
 	# Basically creates a folder of the same name that either the remote branch name is or the new branch I'll be working on
 	wta = "!f() { git worktree add $1 $1; }; f"
