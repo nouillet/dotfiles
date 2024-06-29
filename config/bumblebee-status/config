@@ -1,0 +1,8 @@
+[core]
+modules = load,memory,traffic,bluetooth,pulsein,pulseout,datetime
+theme = gruvbox-powerline
+
+[module-parameters]
+datetime.format = %H:%M:%S
+interval = 1s
+traffic.showname = false
