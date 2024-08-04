@@ -1,8 +1,14 @@
 [core]
-modules = load,memory,traffic,bluetooth,pulsein,pulseout,datetime
+modules = load ,memory ,nic ,battery ,bluetooth, pulsein, pulseout, date, time, weather, dunst
 theme = gruvbox-powerline
 
 [module-parameters]
-datetime.format = %H:%M:%S
 interval = 1s
-traffic.showname = false
+date.format = %A, %B %-d %Y
+time.format = %H:%M:%S
+nic.exclude = wlan0, br-d705382637dc, lo, docker
+nic.include = enp0s20f0u6u2i5
+nic.format = {ip} {ssid} {strength}
+weather.showcity = false
+weather.location = Saint-Jerome, QC
+# pulsein.left-click=select_default_device_popup
