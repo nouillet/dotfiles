@@ -215,7 +215,7 @@ exec --no-startup-id "xrandr --auto"
 exec --no-startup-id "setxkbmap -layout ca"
 
 # Lock Screen. You need to run the command prior targetting the lockscreen wallpaper so it generates it's thing.
-exec --no-startup-id betterlockscreen -w
+# exec --no-startup-id betterlockscreen -w
 bindsym Ctrl+$mod+l exec "betterlockscreen --lock --off 180"
 
 # Keyboard Layout Switch
