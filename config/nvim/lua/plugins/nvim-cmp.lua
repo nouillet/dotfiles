@@ -11,14 +11,46 @@ return {
       "hrsh7th/cmp-path",
       "hrsh7th/cmp-cmdline",
       "L3MON4D3/LuaSnip",
+      "onsails/lspkind-nvim",
       "saadparwaiz1/cmp_luasnip"
     },
 
 
   config = function ()
     local cmp = require'cmp'
+    local lspkind = require('lspkind')
 
     cmp.setup({
+      formatting = {
+        format = lspkind.cmp_format({
+            mode = 'symbol',
+            maxwidth = 50,
+            ellipsis_char = '…',
+            show_labelDetails = true,
+            symbol_map = {
+              -- Text = '',
+              -- Method = '',
+              -- Function = '',
+              -- Constructor = '',
+              -- Field = 'ﴲ',
+              -- Variable = '',
+              -- Class = 'ﴲ',
+              -- Interface = 'ﰮ',
+              -- Module = '',
+              -- Property = 'ﰠ',
+              -- Unit = '',
+              -- Value = '',
+              -- Enum = '',
+              -- Keyword = '',
+              -- Snippet = '',
+              -- Color = '',
+              Copilot = '',
+            },
+            before = function (entry, vim_item)
+              return vim_item
+            end
+          })
+      },
       snippet = {
         -- REQUIRED - you must specify a snippet engine
         expand = function(args)
@@ -42,14 +74,12 @@ return {
         ['<CR>'] = cmp.mapping.confirm({ select = true }), -- Accept currently selected item. Set `select` to `false` to only confirm explicitly selected items.
       }),
       sources = cmp.config.sources({
+        { name = 'copilot'},
         { name = 'path'},
         { name = 'nvim_lsp' },
-        -- { name = 'vsnip' }, -- For vsnip users.
         { name = 'luasnip' }, -- For luasnip users.
-        -- { name = 'ultisnips' }, -- For ultisnips users.
-        -- { name = 'snippy' }, -- For snippy users.
       }, {
-        { name = 'buffer' },
+        -- { name = 'buffer' },
       })
     })
 

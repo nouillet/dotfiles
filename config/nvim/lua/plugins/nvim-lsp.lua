@@ -32,22 +32,32 @@ return {
       handlers = {
         lsp_zero.default_setup,
       },
-
-      require('lspconfig').gopls.setup({
-        settings = {
-          gopls = {
-            analyses = {
-              unusedparams = true,
-            },
-            staticcheck = true,
-            gofumpt = true,
-          },
-        },
-      })
     })
 
     local opts = { noremap=true, silent=true }
     vim.keymap.set('n', '<space>e', vim.diagnostic.open_float, opts)
+
+    require'lspconfig'.lua_ls.setup({
+        settings = {
+          Lua = {
+            diagnostics = {
+              globals = { 'vim' }
+            }
+          }
+        }
+      })
+
+    require('lspconfig').gopls.setup({
+      settings = {
+        gopls = {
+          analyses = {
+            unusedparams = true,
+          },
+          staticcheck = true,
+          gofumpt = true,
+        },
+      },
+    })
 
     require'lspconfig'.ansiblels.setup {
       settings = {
