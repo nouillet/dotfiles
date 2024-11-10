@@ -1,3 +1,4 @@
+[general]
 import = ["$HOME/.config/alacritty/catppuccin-mocha.toml"]
 live_config_reload = true
 
@@ -391,8 +392,8 @@ multiplier = 3
 save_to_clipboard = true
 semantic_escape_chars = ",│`|:\"' ()[]{}<>"
 
-[shell]
-program = "/usr/bin/zsh"
+[terminal]
+shell = "/usr/bin/zsh"
 
 [window]
 decorations = "none"
