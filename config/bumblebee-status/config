@@ -1,14 +1,13 @@
 [core]
-modules = load ,memory ,nic ,battery ,bluetooth, pulsein, pulseout, date, time, weather, dunst
-theme = gruvbox-powerline
+modules = load ,memory ,nic ,battery ,bluetooth, pulsein, pulseout, playerctl, date, time
+theme = onedark-powerline
 
 [module-parameters]
 interval = 1s
 date.format = %A, %B %-d %Y
 time.format = %H:%M:%S
-nic.exclude = wlan0, br-d705382637dc, lo, docker
+nic.exclude = wlan0, br-d705382637dc, br-fd43e954e6b7, lo, docker
 nic.include = enp0s20f0u6u2i5
 nic.format = {ip} {ssid} {strength}
-weather.showcity = false
-weather.location = Saint-Jerome, QC
+playerctl.format = {{artist}} - {{title}}
 # pulsein.left-click=select_default_device_popup
