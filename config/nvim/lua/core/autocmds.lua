@@ -100,3 +100,9 @@ autocmd("BufWritePre", {
     vim.lsp.buf.format({async = false})
   end
 })
+
+-- i3 configuration filetype
+autocmd("BufEnter", {
+  pattern = "*i3/config",
+  command = "setlocal filetype=i3config"
+})
